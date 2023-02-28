@@ -16,10 +16,9 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         # if user is None:
         #     raise InvalidLoginCredentialsException('Invalid login credentials')
-        
+
         login(request, user)
 
-        # Генерируем токен и возвращаем его пользователю вместе с информацией об успешной аутентификации
         # token = generate_jwt_token(user)
         response_data = {
             'status': 'success',
